@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/TOYWeb",
+  "homepage": "https://josiahlaster.github.io/toyweb",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
