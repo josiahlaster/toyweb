@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toyLogo from "./assets/ToyLogo.png";
 
 const approachItems = [
   {
@@ -39,21 +40,9 @@ const opportunityItems = [
 ];
 
 function NavBar() {
-  const logoCandidates = [
-    "/assets/toy-logo.png",
-    "/assets/ToyLogo.png",
-    "/assets/logo.png",
-    "/assets/TOYLogo.png",
-    "/logo.png"
-  ];
-  const [logoIndex, setLogoIndex] = useState(0);
   const [showFallback, setShowFallback] = useState(false);
 
   const handleLogoError = () => {
-    if (logoIndex < logoCandidates.length - 1) {
-      setLogoIndex((idx) => idx + 1);
-      return;
-    }
     setShowFallback(true);
   };
 
@@ -64,7 +53,7 @@ function NavBar() {
           <span className="logo-fallback">TOY</span>
         ) : (
           <img
-            src={logoCandidates[logoIndex]}
+            src={toyLogo}
             alt="TOY logo"
             onError={handleLogoError}
           />
