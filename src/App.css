@@ -42,11 +42,13 @@ main {
   width: 108px;
   height: 108px;
   border-radius: 50%;
-  border: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
   display: grid;
   place-items: center;
   text-decoration: none;
-  background: transparent;
 }
 
 .logo-mark img {
@@ -75,19 +77,28 @@ main {
   justify-content: flex-end;
 }
 
-.nav-wrap a {
+/* nav links — works for both <a> and <button> */
+.nav-wrap a,
+.nav-link {
   text-decoration: none;
   color: #273847;
   font-weight: 600;
   padding-bottom: 0.45rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-.nav-wrap a.active {
+.nav-wrap a.active,
+.nav-link.active {
   color: var(--deep-blue);
   border-bottom: 3px solid var(--blue);
 }
 
-.nav-wrap a:hover {
+.nav-wrap a:hover,
+.nav-link:hover {
   color: var(--deep-blue);
 }
 
@@ -190,6 +201,10 @@ main {
   padding: 0.9rem 1.45rem;
   min-width: 160px;
   text-align: center;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .btn.primary {

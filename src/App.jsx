@@ -41,6 +41,12 @@ const opportunityItems = [
   }
 ];
 
+// Scroll to a section by id without touching the URL hash
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
 function NavBar() {
   const [showFallback, setShowFallback] = useState(false);
 
@@ -50,23 +56,23 @@ function NavBar() {
 
   return (
     <header className="nav-wrap">
-      <a className="logo-mark" href="#home" aria-label="Transformative Opportunities for Youth">
+      <button
+        className="logo-mark"
+        onClick={() => scrollTo("home")}
+        aria-label="Transformative Opportunities for Youth"
+      >
         {showFallback ? (
           <span className="logo-fallback">TOY</span>
         ) : (
-          <img
-            src={toyLogo}
-            alt="TOY logo"
-            onError={handleLogoError}
-          />
+          <img src={toyLogo} alt="TOY logo" onError={handleLogoError} />
         )}
-      </a>
+      </button>
       <nav>
-        <a className="active" href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#opportunities">Programs</a>
-        <a href="#approach">Resources</a>
-        <a href="#belief">Contact</a>
+        <button className="nav-link active" onClick={() => scrollTo("home")}>Home</button>
+        <button className="nav-link" onClick={() => scrollTo("about")}>About</button>
+        <button className="nav-link" onClick={() => scrollTo("opportunities")}>Programs</button>
+        <button className="nav-link" onClick={() => scrollTo("approach")}>Resources</button>
+        <button className="nav-link" onClick={() => scrollTo("belief")}>Contact</button>
       </nav>
     </header>
   );
@@ -88,12 +94,12 @@ function Hero() {
         </p>
         <div className="hero-divider" />
         <div className="hero-actions">
-          <a href="#about" className="btn primary">
+          <button className="btn primary" onClick={() => scrollTo("about")}>
             Learn More <span aria-hidden="true">→</span>
-          </a>
-          <a href="#opportunities" className="btn secondary">
+          </button>
+          <button className="btn secondary" onClick={() => scrollTo("opportunities")}>
             Get Involved <span aria-hidden="true">→</span>
-          </a>
+          </button>
         </div>
       </div>
       <div className="contact-card">
