@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import PrivacyPolicy from "./PrivacyPolicy";
 import toyLogo from "./assets/ToyLogo.png";
 
 const approachItems = [
@@ -131,7 +133,7 @@ function Hero() {
   );
 }
 
-function App() {
+function HomePage() {
   return (
     <main>
       <NavBar />
@@ -194,8 +196,24 @@ function App() {
           © {new Date().getFullYear()} Transformative Opportunities for Youth
           (TOY)
         </p>
+        <p className="footer-links">
+          <Link to="/privacy">Privacy Policy</Link>
+          {" · "}
+          <a href="mailto:info@transformativeyouth.org">Contact Us</a>
+        </p>
       </footer>
     </main>
+  );
+}
+
+function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      </Routes>
+    </HashRouter>
   );
 }
 

@@ -1,0 +1,241 @@
+/* ── Privacy Policy Page Styles ─────────────────────────────── */
+
+.pp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid rgba(22, 150, 232, 0.15);
+  box-shadow: 0 2px 12px rgba(9, 111, 179, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #096fb3;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.pp-back:hover {
+  color: #1696e8;
+  text-decoration: underline;
+}
+
+.pp-org {
+  font-size: 0.85rem;
+  color: #5a7a91;
+  font-weight: 500;
+}
+
+/* Hero banner */
+.pp-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.pp-hero {
+  background: linear-gradient(135deg, #096fb3 0%, #1696e8 55%, #72bf44 100%);
+  border-radius: 0 0 24px 24px;
+  padding: 2.8rem 2.5rem 2.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.pp-hero h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.pp-date {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  opacity: 0.82;
+}
+
+.pp-tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: 0.93;
+  max-width: 620px;
+}
+
+/* Table of Contents */
+.pp-toc {
+  background: #f1f7fd;
+  border-left: 4px solid #1696e8;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pp-toc h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #096fb3;
+}
+
+.pp-toc ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.3rem 1.5rem;
+}
+
+.pp-toc li {
+  font-size: 0.92rem;
+}
+
+.pp-toc a {
+  color: #1a4a6b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+
+.pp-toc a:hover {
+  color: #1696e8;
+  text-decoration: underline;
+}
+
+/* Body sections */
+.pp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pp-section {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(22, 150, 232, 0.12);
+  padding: 1.5rem 1.8rem;
+  scroll-margin-top: 80px;
+  transition: box-shadow 0.2s;
+}
+
+.pp-section:target {
+  box-shadow: 0 0 0 3px rgba(22, 150, 232, 0.3);
+}
+
+.pp-section h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.2rem;
+  color: #096fb3;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid #f0c33a;
+  display: inline-block;
+}
+
+.pp-section p,
+.pp-section li {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: #1e3044;
+}
+
+.pp-section ul,
+.pp-section ol {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.pp-section li {
+  margin-bottom: 0.4rem;
+}
+
+.pp-section a {
+  color: #096fb3;
+  font-weight: 600;
+}
+
+.pp-section address {
+  font-style: normal;
+  background: #f1f7fd;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  line-height: 1.85;
+  margin-top: 0.75rem;
+}
+
+/* Footer note */
+.pp-footer-note {
+  margin-top: 2.5rem;
+  background: linear-gradient(145deg, #f5ffed, #eef5fb);
+  border-radius: 14px;
+  padding: 1.5rem 1.8rem;
+  text-align: center;
+  border: 1px solid rgba(114, 191, 68, 0.25);
+}
+
+.pp-footer-note p {
+  margin: 0 0 1rem;
+  color: #2d4a2e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pp-back-bottom {
+  display: inline-block;
+  background: #096fb3;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.pp-back-bottom:hover {
+  background: #1696e8;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .pp-nav {
+    padding: 0.6rem 1rem;
+  }
+
+  .pp-org {
+    display: none;
+  }
+
+  .pp-hero {
+    padding: 1.8rem 1.2rem 1.5rem;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .pp-main {
+    padding: 0 0.75rem 3rem;
+  }
+
+  .pp-section {
+    padding: 1.1rem 1.1rem;
+    border-radius: 10px;
+  }
+
+  .pp-toc ol {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-toc {
+    padding: 1rem 1.1rem;
+  }
+}

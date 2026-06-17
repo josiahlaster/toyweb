@@ -322,41 +322,112 @@ main {
   padding: 1.6rem 1rem 0.8rem;
 }
 
+.footer-links {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: #096fb3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* ── Tablet (≤800px) ──────────────────────────────────────────── */
 @media (max-width: 800px) {
   .nav-wrap {
     position: static;
   }
 
+  .logo-mark {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+
   .hero {
-    padding: 1.2rem 1.2rem 8.2rem;
-    min-height: 640px;
+    /* extra bottom room: contact card (~130px) + gap + 3 feature rows (~3×72px) + padding */
+    padding: 1.2rem 1.2rem 0;
+    min-height: unset;
+    /* switch to normal flow so absolute children size the hero */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  /* Push contact card into normal flow on mobile */
+  .contact-card {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .contact-row {
+    flex-wrap: wrap;
+  }
+
+  /* Push feature row into normal flow on mobile */
+  .hero-feature-row {
+    position: static;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    /* give it a background strip so text stays readable without the ::before/::after blobs */
+    background: linear-gradient(90deg, #3db83d 0%, #1092de 100%);
+    border-radius: 14px;
+    padding: 1rem;
+    margin: 0 0 1rem;
+  }
+
+  /* Keep wave blobs but reduce their size so they don't obscure content */
+  .hero::before {
+    display: none;
+  }
+
+  .hero::after {
+    display: none;
   }
 
   .section {
     padding: 1.2rem;
   }
+}
 
-  .hero::before {
-    height: 220px;
-    bottom: 70px;
+/* ── Small phones (≤480px) ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .nav-wrap nav {
+    gap: 0.65rem;
   }
 
-  .hero::after {
-    height: 220px;
-    bottom: -78px;
+  .nav-wrap a {
+    font-size: 0.85rem;
   }
 
-  .contact-card {
-    left: 1.2rem;
-    right: 1.2rem;
-    bottom: 136px;
-    width: auto;
+  .logo-mark {
+    width: 56px;
+    height: 56px;
   }
 
-  .hero-feature-row {
-    grid-template-columns: 1fr;
-    left: 1.2rem;
-    right: 1.2rem;
-    bottom: 16px;
+  .btn {
+    min-width: unset;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.6rem;
   }
 }
